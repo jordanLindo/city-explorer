@@ -13,6 +13,8 @@ Take in a city name from the user and pass that to the API, and receive a city o
 
 A React app using javaScript, Html, Css, Bootstrap, and git for version control, and Axios for access to the LocationIq API.
 
+<img src="./images/Whiteboard.png" />  
+
 ## Change Log
 
 ## Credit and Collaborations 

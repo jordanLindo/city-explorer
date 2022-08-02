@@ -43,6 +43,8 @@ class App extends React.Component {
     })
     let image = document.getElementById("mapImage");
     image.style.visibility = 'visible';
+    let list = document.getElementById("cityList");
+    list.style.visibility = 'visible';
   }
 
   HandleCityInput = (event) => {
@@ -50,10 +52,6 @@ class App extends React.Component {
       city: event.target.value,
     });
     console.log(this.state.city);
-  }
-
-  hideImage = (event) => {
-    event.target.style.display = 'none';
   }
 
   render() {
@@ -67,7 +65,7 @@ class App extends React.Component {
               <input type="text" onChange={this.HandleCityInput}></input>
             </label>
             <button type="submit">Explore!</button>
-            <ul>
+            <ul id="cityList" style={{visibility: "hidden" }}>
               <li>{this.state.cityData.display_name}</li>
               <li>Latitude: {this.state.cityData.lat}</li>
               <li>Longitude: {this.state.cityData.lon}</li>
