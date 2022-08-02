@@ -31,25 +31,25 @@ Finish time: 2:47
 
 Actual time needed to complete: 1 hour 2 min
 
-Name of feature: Locations
+Name of feature: 2 Locations
 
 Estimate of time needed to complete: 1 hour
 
 Start time: 3:00
 
-Finish time: _____
+Finish time: 8:25
 
-Actual time needed to complete: _____
+Actual time needed to complete: 5 hours 25 min
 
-Name of feature: ________________________________
+Name of feature: 3 Map
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 8:31
 
-Finish time: _____
+Finish time: 9:58
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour 27 min
 
 Name of feature: ________________________________
 

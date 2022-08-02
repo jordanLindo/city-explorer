@@ -15,6 +15,7 @@ class App extends React.Component {
       error: false,
       errorMessage: "",
       mapData: {},
+      mapUrl: "",
     };
   }
 
@@ -35,13 +36,13 @@ class App extends React.Component {
 
     console.log("This is it", this.state);
 
-    let mapUrl = `https://us1.locationiq.com/v1/reverse?key=${process.env.REACT_APP_LOCATION_KEY}&lat=${cityInfo[0].lat}&lon=${cityInfo[0].lon}&format=json`;
+    let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityInfo[0].lat},${cityInfo[0].lon}&zoom=12`;
 
-    let mapInfo = await axios.get(mapUrl);
-    console.log("Map info:", mapInfo)
     this.setState({
-      mapData: mapInfo
+      mapUrl: mapUrl
     })
+    let image = document.getElementById("mapImage");
+    image.style.visibility = 'visible';
   }
 
   HandleCityInput = (event) => {
@@ -51,18 +52,27 @@ class App extends React.Component {
     console.log(this.state.city);
   }
 
+  hideImage = (event) => {
+    event.target.style.display = 'none';
+  }
+
   render() {
 
     return (
       <>
         <Header cityData={this.state.cityData} />
         <main>
-          <form onSubmit={this.submitCityHandler}>
+          <form id="form" onSubmit={this.submitCityHandler}>
             <label>Enter a City
               <input type="text" onChange={this.HandleCityInput}></input>
             </label>
             <button type="submit">Explore!</button>
-            <p>{this.state.cityData.display_name}<br/>Latitude: {this.state.cityData.lat}<br/>Longitude: {this.state.cityData.lon}</p>
+            <ul>
+              <li>{this.state.cityData.display_name}</li>
+              <li>Latitude: {this.state.cityData.lat}</li>
+              <li>Longitude: {this.state.cityData.lon}</li>
+            </ul>
+            <img id="mapImage" style={{ visibility: "hidden" }} src={this.state.mapUrl} alt="A map of the selected city." />
           </form>
         </main>
         <Footer />
@@ -72,3 +82,5 @@ class App extends React.Component {
 }
 
 export default App;
+
+

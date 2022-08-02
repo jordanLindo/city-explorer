@@ -1,0 +1,34 @@
+/*
+    dark1 = #000000
+    dark2 = #B89E97
+    light1 = #FFF
+    light2 = #DECCCC
+    alt = #1098F7
+*/
+
+body{
+    align-content: center;
+    background-color: #DECCCC;
+}
+
+main, header{
+    margin: 0 15%;
+}
+
+h1{
+    color: #000000;
+}
+
+img{
+    height: 450px;
+}
+
+ul{
+    list-style-type: none;
+    text-align: left;
+}
+
+li{
+    display: inline-block;
+    padding-right: 15px;
+}
