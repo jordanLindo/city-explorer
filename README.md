@@ -53,6 +53,46 @@ Finish time: 9:58
 
 Actual time needed to complete: 1 hour 27 min
 
+Name of feature: Errors
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 3:15
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Name of feature: ________________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
 Name of feature: ________________________________
 
 Estimate of time needed to complete: _____
