@@ -16,6 +16,7 @@ class App extends React.Component {
       errorMessage: "",
       mapData: {},
       mapUrl: "",
+      showCity: false,
     };
   }
 
@@ -39,12 +40,9 @@ class App extends React.Component {
     let mapUrl = `https://maps.locationiq.com/v3/staticmap?key=${process.env.REACT_APP_LOCATION_KEY}&center=${cityInfo[0].lat},${cityInfo[0].lon}&zoom=12`;
 
     this.setState({
-      mapUrl: mapUrl
+      mapUrl: mapUrl,
+      showCity: true,
     })
-    let image = document.getElementById("mapImage");
-    image.style.visibility = 'visible';
-    let list = document.getElementById("cityList");
-    list.style.visibility = 'visible';
   }
 
   HandleCityInput = (event) => {
@@ -55,7 +53,18 @@ class App extends React.Component {
   }
 
   render() {
-
+    let cityDisplay = (this.state.showCity ?
+    <>
+        <ul>
+            <li>{this.state.cityData.display_name}</li>
+            <li>Latitude: {this.state.cityData.lat}</li>
+            <li>Longitude: {this.state.cityData.lon}</li>
+        </ul>
+        <img src={this.state.mapUrl} alt="A map of the selected city." />
+    </>
+    :
+    <></>
+    )
     return (
       <>
         <Header cityData={this.state.cityData} />
@@ -65,12 +74,9 @@ class App extends React.Component {
               <input type="text" onChange={this.HandleCityInput}></input>
             </label>
             <button type="submit">Explore!</button>
-            <ul id="cityList" style={{visibility: "hidden" }}>
-              <li>{this.state.cityData.display_name}</li>
-              <li>Latitude: {this.state.cityData.lat}</li>
-              <li>Longitude: {this.state.cityData.lon}</li>
-            </ul>
-            <img id="mapImage" style={{ visibility: "hidden" }} src={this.state.mapUrl} alt="A map of the selected city." />
+            <div>
+              {cityDisplay}
+            </div>
           </form>
         </main>
         <Footer />
