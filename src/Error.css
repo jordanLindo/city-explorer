@@ -1,0 +1,10 @@
+.Error{
+    color: red;
+    background-color: #FFF;
+    min-height: 100px;
+    text-align: center;
+}
+
+.Error > h3 {
+    padding-top: 35px;
+}
