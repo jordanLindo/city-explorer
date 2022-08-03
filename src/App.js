@@ -5,6 +5,7 @@ import Image from './Image.js';
 import Error from './Error.js';
 import React from 'react';
 import axios from 'axios';
+import Button from 'react-bootstrap/Button'
 
 class App extends React.Component {
   constructor(props) {
@@ -88,7 +89,7 @@ class App extends React.Component {
             <label>Enter a City
               <input type="text" onChange={this.HandleCityInput}></input>
             </label>
-            <button type="submit">Explore!</button>
+            <Button type="submit">Explore!</Button>
             <div>
               {cityDisplay}
             </div>
