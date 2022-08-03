@@ -13,7 +13,10 @@ Take in a city name from the user and pass that to the API, and receive a city o
 
 A React app using javaScript, Html, Css, Bootstrap, and git for version control, and Axios for access to the LocationIq API.
 
-<img src="./public/images/Whiteboard.png" />  
+<img src="./public/images/Whiteboard.png" /> 
+<img src="./public/images/IMG_1765.jpg" /> 
+<img src="./public/images/Whiteboard8322.png" /> 
+
 
 ## Change Log
 
@@ -59,15 +62,15 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 3:15
 
-Finish time: _____
+Finish time: 4:25
 
-Actual time needed to complete: _____
+Actual time needed to complete: 1 hour 10 min
 
-Name of feature: ________________________________
+Name of feature: Weather
 
-Estimate of time needed to complete: _____
+Estimate of time needed to complete: 1 hour
 
-Start time: _____
+Start time: 9:03
 
 Finish time: _____
 
