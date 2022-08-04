@@ -6,29 +6,24 @@
     alt = #1098F7
 */
 
-body{
-    align-content: center;
-    background-color: #DECCCC;
+body {
+    background-color: #fff;
 }
 
-main, header{
-    margin: 0 15%;
+h1 {
+    text-align: center;
 }
 
-h1{
-    color: #000000;
+main {
+    color: #FFF;
+    max-width: 90%;
+    margin: 20px auto;
+    text-align: center;
+    background-color: #1098F7;
+    padding: 7% 0;
+    border-radius: .5em;
 }
 
 img{
-    height: 450px;
-}
-
-ul{
-    list-style-type: none;
-    text-align: left;
-}
-
-li{
-    display: inline-block;
-    padding-right: 15px;
+    width: 90%;
 }
