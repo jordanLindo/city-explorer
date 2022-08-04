@@ -19,7 +19,7 @@ A React app using javaScript, Html, Css, Bootstrap, and git for version control,
 
 ## Credit and Collaborations 
 
-Allie Dunkel, Mary Kuriuki
+Allie Dunkel, Mary Kuriuki, Mike Pace, Varun Pradeep
 
 ## Time Estimates
 
@@ -69,11 +69,31 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 9:03
 
+Finish time: 8:21
+
+Actual time needed to complete: 23 hour 18 min
+
+Name of feature: 3 Errors (revisited)
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 8:10
+
+Finish time: 9:13
+
+Actual time needed to complete: 1 hour 3 min
+
+Name of feature: 1 Weather(live)
+
+Estimate of time needed to complete: 1 hour
+
+Start time: 9:17
+
 Finish time: _____
 
 Actual time needed to complete: _____
 
-Name of feature: ________________________________
+Name of feature: __________________________
 
 Estimate of time needed to complete: _____
 
@@ -83,17 +103,7 @@ Finish time: _____
 
 Actual time needed to complete: _____
 
-Name of feature: ________________________________
-
-Estimate of time needed to complete: _____
-
-Start time: _____
-
-Finish time: _____
-
-Actual time needed to complete: _____
-
-Name of feature: ________________________________
+Name of feature:____________________________
 
 Estimate of time needed to complete: _____
 

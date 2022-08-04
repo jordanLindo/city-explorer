@@ -4,7 +4,7 @@ class Header extends React.Component {
     render() {
         return (
             <header>
-                <h1>City Data from LocationIq</h1>
+                <h1>City Data</h1>
             </header>
         )
     }
