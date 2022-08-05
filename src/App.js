@@ -1,8 +1,8 @@
 import './App.css';
 import Header from './Header.js';
 import Image from './Image.js';
-import Error from './Error.js';
 import Weather from './Weather.js';
+import Error from './Error.js';
 import React from 'react';
 import axios from 'axios';
 import Button from 'react-bootstrap/Button';
@@ -52,11 +52,12 @@ class App extends React.Component {
     }
 
     try {
-      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?searchQuery=${this.state.cityName}&lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
+      console.log();
+      let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
 
       let results = await axios.get(weatherUrl);
       console.log(results.data);
-      let forecastArr = results.data.map((val) => 'On ' + val.date + ' ' + val.description);
+      let forecastArr = results.data.data;
       this.setState({
         forecast: forecastArr,
         showForecast: true
@@ -83,7 +84,6 @@ class App extends React.Component {
 
   resetState() {
     this.setState({
-      city: "",
       cityData: {},
       error: false,
       errorMessage: "",
