@@ -6,10 +6,10 @@ import { Card, ListGroup } from 'react-bootstrap';
 class Weather extends React.Component {
 
     render() {
-        let listItems = this.props.forecast.map((val, index) => {
-            let forecastDay = (
+        let listItems = this.props.forecast.data.map((val, index) => {
+            let forecastDay =
                 <ListGroup>
-                    <ListGroup.Item style={{fontSize:"20px"}}>
+                    <ListGroup.Item style={{ fontSize: "20px" }}>
                         {val.datetime}
                     </ListGroup.Item>
                     <ListGroup.Item>
@@ -24,7 +24,7 @@ class Weather extends React.Component {
                     <ListGroup.Item>
                         Description: {val.weather.description}
                     </ListGroup.Item>
-                </ListGroup>)
+                </ListGroup>
             return <ListGroup.Item style={{ borderStyle: "groove" }} key={index}>{forecastDay}</ListGroup.Item>;
         });
         let forecastList = <ListGroup>{listItems}</ListGroup>;

@@ -2,10 +2,11 @@ import './App.css';
 import Header from './Header.js';
 import Image from './Image.js';
 import Weather from './Weather.js';
+import Movie from './Movie.js';
 import Error from './Error.js';
 import React from 'react';
 import axios from 'axios';
-import Button from 'react-bootstrap/Button';
+import { Button, Row, Col } from 'react-bootstrap';
 
 class App extends React.Component {
   constructor(props) {
@@ -20,11 +21,15 @@ class App extends React.Component {
       errorMessage: "",
       errorWeather: false,
       errorWeatherMessage: "",
+      errorMovie: false,
+      errorMovieMessage: "",
       mapData: {},
       mapUrl: "",
       showCity: false,
       forecast: [],
       showForecast: false,
+      movieData: [],
+      showMovie: false,
     };
   }
 
@@ -52,12 +57,9 @@ class App extends React.Component {
     }
 
     try {
-      console.log();
       let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
-
       let results = await axios.get(weatherUrl);
-      console.log(results.data);
-      let forecastArr = results.data.data;
+      let forecastArr = results.data;
       this.setState({
         forecast: forecastArr,
         showForecast: true
@@ -67,6 +69,22 @@ class App extends React.Component {
       this.setState({
         errorWeatherMessage: errorString,
         errorWeather: true,
+      })
+    }
+
+    try {
+      let movieUrl = `${process.env.REACT_APP_SERVER}/movie?keyword=${this.state.cityName}`;
+      let results = await axios.get(movieUrl);
+      let resultData = results.data;
+      this.setState({
+        movieData: resultData,
+        showMovie: true,
+      })
+    } catch (error) {
+      let errorString = (error.name + ': ' + error.message);
+      this.setState({
+        errorMovie: true,
+        errorMovieMessage: errorString,
       })
     }
   }
@@ -87,17 +105,21 @@ class App extends React.Component {
       cityData: {},
       error: false,
       errorMessage: "",
-      errorWeatherMessage: "",
       errorWeather: false,
+      errorWeatherMessage: "",
+      errorMovie: false,
+      errorMovieMessage: "",
       mapData: {},
       mapUrl: "",
       showCity: false,
       showForecast: false,
+      showMovie: false,
+      movieData: [],
     });
   }
 
   render() {
-    let cityDisplay = (this.state.showCity ?
+    let cityDisplay = this.state.showCity ?
       <>
         <ul style={{ listStyleType: "none" }}>
           <li>{this.state.cityData.display_name}</li>
@@ -105,35 +127,34 @@ class App extends React.Component {
           <li>Longitude: {this.state.cityData.lon}</li>
         </ul>
         <Image src={this.state.mapUrl} alt="A map of the selected city." />
-      </> : this.state.error ?
-        <>
-          <Error errorMessage={this.state.errorMessage} />
-        </> :
-        <></>
-    )
+      </> : this.state.error ? <Error errorMessage={this.state.errorMessage} /> : <></>;
 
-    let forecastDisplay = (this.state.showForecast ?
-      <>
-        <Weather forecast={this.state.forecast} />
-      </>
-      : this.state.error ?
-        <>
-          <Error errorMessage={this.state.errorWeatherMessage} />
-        </> :
-        <></>
+    let forecastDisplay = this.state.showForecast ?
+      <Weather forecast={this.state.forecast} /> : this.state.error ? <Error errorMessage={this.state.errorWeatherMessage} /> : <></>;
 
-    )
+    let movieDisplay = this.state.showMovie ? <Movie movieData={this.state.movieData} /> : this.state.errorMovie ? <Error errorMessage={this.state.errorMovieMessage} /> : <></>;
+
     return (
       <>
         <Header cityData={this.state.cityData} />
         <main>
           <form id="form" onSubmit={this.submitCityHandler}>
             <label>Enter a City</label><br />
-            <input type="text" onChange={this.HandleCityInput}></input><br/>
+            <input type="text" onChange={this.HandleCityInput}></input><br />
             <Button type="submit">Explore!</Button>
             <div>
-              {cityDisplay}
-              {forecastDisplay}
+              <div style={{marginBottom: '2%'}}>{cityDisplay}</div>
+              
+              <Row>
+                <Col>
+                  {forecastDisplay}
+                </Col>
+                <Col>
+                  {movieDisplay}
+                </Col>
+
+              </Row>
+
             </div>
           </form>
         </main>

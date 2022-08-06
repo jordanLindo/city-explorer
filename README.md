@@ -17,12 +17,13 @@ A React app using javaScript, Html, Css, Bootstrap, and git for version control,
 <img src="./public/images/IMG_1765.jpg" />
 <img src="./public/images/Whiteboard8322.png" />
 <img src="./public/images/Whiteboard8422.png" />
+<img src="./public/images/Whiteboard8522.png" />
 
 ## Change Log
 
 ## Credit and Collaborations 
 
-Allie Dunkel, Mary Kuriuki, Mike Pace, Varun Pradeep
+Allie Dunkel, Mary Kuriuki, Mike Pace, Varun Pradeep, Teresa Phillips, Daniel Frey
 
 ## Time Estimates
 
@@ -92,11 +93,31 @@ Estimate of time needed to complete: 1 hour
 
 Start time: 9:17
 
+Finish time: 6:30
+
+Actual time needed to complete: 9 hours 13 min
+
+Name of feature: 2 Movies
+
+Estimate of time needed to complete: 2 hours
+
+Start time: 9:14
+
 Finish time: _____
 
 Actual time needed to complete: _____
 
-Name of feature: __________________________
+Name of feature:____________________________
+
+Estimate of time needed to complete: _____
+
+Start time: _____
+
+Finish time: _____
+
+Actual time needed to complete: _____
+
+Name of feature:____________________________
 
 Estimate of time needed to complete: _____
 
