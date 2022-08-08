@@ -30,6 +30,7 @@ class App extends React.Component {
       showForecast: false,
       movieData: [],
       showMovie: false,
+      movieImg: {},
     };
   }
 
@@ -59,6 +60,9 @@ class App extends React.Component {
     try {
       let weatherUrl = `${process.env.REACT_APP_SERVER}/weather?lat=${this.state.cityData.lat}&lon=${this.state.cityData.lon}`;
       let results = await axios.get(weatherUrl);
+      if(results.data === ''){
+        throw new Error('Error with data.');
+      }
       let forecastArr = results.data;
       this.setState({
         forecast: forecastArr,
@@ -74,8 +78,8 @@ class App extends React.Component {
 
     try {
       let movieUrl = `${process.env.REACT_APP_SERVER}/movie?keyword=${this.state.cityName}`;
-      let results = await axios.get(movieUrl);
-      let resultData = results.data;
+      let movieResults = await axios.get(movieUrl);
+      let resultData = movieResults.data;
       this.setState({
         movieData: resultData,
         showMovie: true,
@@ -141,12 +145,12 @@ class App extends React.Component {
           <form id="form" onSubmit={this.submitCityHandler}>
             <label>Enter a City</label><br />
             <input type="text" onChange={this.HandleCityInput}></input><br />
-            <Button type="submit">Explore!</Button>
+            <Button style={{margin: '1%'}} type="submit">Explore!</Button>
             <div>
               <div style={{marginBottom: '2%'}}>{cityDisplay}</div>
               
               <Row>
-                <Col>
+                <Col style={{margin: '1%s'}}>
                   {forecastDisplay}
                 </Col>
                 <Col>
