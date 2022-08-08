@@ -5,7 +5,7 @@ class Movie extends React.Component {
     render() {
         let movieData = this.props.movieData.results.map((movie, index) => {
             let movieCard =
-                <ListGroupItem>
+                <ListGroupItem key={index}>
                     <Card>
                         <Card.Header>
                             <Card.Title>
